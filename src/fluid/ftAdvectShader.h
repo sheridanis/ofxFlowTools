@@ -39,7 +39,7 @@ namespace flowTools {
 									  vec2 st = gl_TexCoord[0].st;
 									  vec2 st2 = st * Scale;
 									  
-									  float inverseSolid = 1.0 - ceil(texture2DRect(Obstacle, st2).x - 0.5);
+									  float inverseSolid = 1.0 - ceil(texture2DRect(Obstacle, st2).x - 0.98);
 									  
 									  vec2 u = texture2DRect(Velocity, st2).rg / Scale;
 									  vec2 coord =  st - TimeStep * InverseCellSize * u;
@@ -74,7 +74,7 @@ namespace flowTools {
 									  vec2 st = texCoordVarying;
 									  vec2 st2 = st * Scale;
 									  
-									  float inverseSolid = 1.0 - ceil(texture(Obstacle, st2).x - 0.5);
+									  float inverseSolid = 1.0 - ceil(texture(Obstacle, st2).x - 0.98);
 									  
 									  vec2 u = texture(Velocity, st2).rg / Scale;
 									  vec2 coord =  st - TimeStep * InverseCellSize * u;

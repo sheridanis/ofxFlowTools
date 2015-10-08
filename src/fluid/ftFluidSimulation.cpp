@@ -99,7 +99,8 @@ namespace flowTools {
 		temperatureSwapBuffer.clear();
 		pressureSwapBuffer.allocate(simulationWidth,simulationHeight,interformatPressure);
 		
-		obstacleBuffer.allocate(simulationWidth, simulationHeight, internalFormatObstacle);
+//		obstacleBuffer.allocate(simulationWidth, simulationHeight, internalFormatObstacle);
+		obstacleBuffer.allocate(densityWidth, densityHeight, internalFormatObstacle);
 		obstacleBuffer.clear();
 		createEdgeImage(obstacleBuffer);
 		

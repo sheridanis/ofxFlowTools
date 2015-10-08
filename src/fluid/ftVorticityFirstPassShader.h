@@ -38,10 +38,10 @@ namespace flowTools {
 								  
 								  void fRoundTexNeighbors(sampler2DRect tex, vec2 st,
 														  out float left, out float right, out float bottom, out float top) {
-									  left   = ceil(texture2DRect(tex, st - vec2(1, 0)).x - 0.5); // round not available
-									  right  = ceil(texture2DRect(tex, st + vec2(1, 0)).x - 0.5);
-									  bottom = ceil(texture2DRect(tex, st - vec2(0, 1)).x - 0.5);
-									  top    = ceil(texture2DRect(tex, st + vec2(0, 1)).x - 0.5);
+									  left   = ceil(texture2DRect(tex, st - vec2(1, 0)).x - 0.98); // round not available
+									  right  = ceil(texture2DRect(tex, st + vec2(1, 0)).x - 0.98);
+									  bottom = ceil(texture2DRect(tex, st - vec2(0, 1)).x - 0.98);
+									  top    = ceil(texture2DRect(tex, st + vec2(0, 1)).x - 0.98);
 								  }
 								  
 								  void main(){
@@ -90,10 +90,10 @@ namespace flowTools {
 								  
 								  void fRoundTexNeighbors(sampler2DRect tex, vec2 st,
 														  out float left, out float right, out float bottom, out float top) {
-									  left   = ceil(texture(tex, st - vec2(1, 0)).x - 0.5); // round not available
-									  right  = ceil(texture(tex, st + vec2(1, 0)).x - 0.5);
-									  bottom = ceil(texture(tex, st - vec2(0, 1)).x - 0.5);
-									  top    = ceil(texture(tex, st + vec2(0, 1)).x - 0.5);
+									  left   = ceil(texture(tex, st - vec2(1, 0)).x - 0.98); // round not available
+									  right  = ceil(texture(tex, st + vec2(1, 0)).x - 0.98);
+									  bottom = ceil(texture(tex, st - vec2(0, 1)).x - 0.98);
+									  top    = ceil(texture(tex, st + vec2(0, 1)).x - 0.98);
 								  }
 								  
 								  void main(){

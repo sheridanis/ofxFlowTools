@@ -42,10 +42,10 @@ namespace flowTools {
 								  
 								  void fRoundTexNeighbors(sampler2DRect tex, vec2 st,
 														  out float left, out float right, out float bottom, out float top) {
-									  left   = ceil(texture2DRect(tex, st - vec2(1, 0)).x - 0.5); // round not available
-									  right  = ceil(texture2DRect(tex, st + vec2(1, 0)).x - 0.5);
-									  bottom = ceil(texture2DRect(tex, st - vec2(0, 1)).x - 0.5);
-									  top    = ceil(texture2DRect(tex, st + vec2(0, 1)).x - 0.5);
+									  left   = ceil(texture2DRect(tex, st - vec2(1, 0)).x - 0.9); // round not available
+									  right  = ceil(texture2DRect(tex, st + vec2(1, 0)).x - 0.9);
+									  bottom = ceil(texture2DRect(tex, st - vec2(0, 1)).x - 0.9);
+									  top    = ceil(texture2DRect(tex, st + vec2(0, 1)).x - 0.9);
 								  }
 								  
 								  void main(){
@@ -58,7 +58,7 @@ namespace flowTools {
 									  
 									  float oL; float oR; float oB; float oT;
 									  fRoundTexNeighbors (Obstacle, st, oL, oR, oB, oT);
-									  float inverseSolid = 1.0 - ceil(texture2DRect(Obstacle, st).x - 0.5);
+									  float inverseSolid = 1.0 - ceil(texture2DRect(Obstacle, st).x - 0.9);
 									  
 									  vL *= 1.0 - oL;
 									  vR *= 1.0 - oR;
@@ -98,10 +98,10 @@ namespace flowTools {
 								  
 								  void fRoundTexNeighbors(sampler2DRect tex, vec2 st,
 														  out float left, out float right, out float bottom, out float top) {
-									  left   = ceil(texture(tex, st - vec2(1, 0)).x - 0.5); // round not available
-									  right  = ceil(texture(tex, st + vec2(1, 0)).x - 0.5);
-									  bottom = ceil(texture(tex, st - vec2(0, 1)).x - 0.5);
-									  top    = ceil(texture(tex, st + vec2(0, 1)).x - 0.5);
+									  left   = ceil(texture(tex, st - vec2(1, 0)).x - 0.98); // round not available
+									  right  = ceil(texture(tex, st + vec2(1, 0)).x - 0.98);
+									  bottom = ceil(texture(tex, st - vec2(0, 1)).x - 0.98);
+									  top    = ceil(texture(tex, st + vec2(0, 1)).x - 0.98);
 								  }
 								  
 								  void main(){
@@ -114,7 +114,7 @@ namespace flowTools {
 									  
 									  float oL; float oR; float oB; float oT;
 									  fRoundTexNeighbors (Obstacle, st, oL, oR, oB, oT);
-									  float inverseSolid = 1.0 - ceil(texture(Obstacle, st).x - 0.5);
+									  float inverseSolid = 1.0 - ceil(texture(Obstacle, st).x - 0.98);
 									  
 									  vL *= 1.0 - oL;
 									  vR *= 1.0 - oR;
